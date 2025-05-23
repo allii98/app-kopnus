@@ -26,8 +26,8 @@ Aplikasi API backend untuk job portal **MX100**, menghubungkan perusahaan dan fr
 
 1. **Clone repositori**
    ```bash
-   git clone <url-repo>
-   cd mx100-job-portal
+   git clone [<url-repo>](https://github.com/allii98/app-kopnus.git)
+   cd app-kopnus
    ```
 
 2. **Install dependency**
@@ -71,7 +71,7 @@ Aplikasi API backend untuk job portal **MX100**, menghubungkan perusahaan dan fr
 
 Import file Postman untuk menguji API:
 
-- File: `mx100-api-collection.json`
+- File: `KOPNUS.postman_collection.json`
 - URL dasar: `http://localhost:8000/api`
 - Tambahkan token di tab **Authorization** → **Bearer Token** untuk endpoint yang butuh login.
 
