@@ -26,7 +26,7 @@ Aplikasi API backend untuk job portal **MX100**, menghubungkan perusahaan dan fr
 
 1. **Clone repositori**
    ```bash
-   git clone [<url-repo>](https://github.com/allii98/app-kopnus.git)
+   git clone https://github.com/allii98/app-kopnus.git
    cd app-kopnus
    ```
 
