@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "a7efba6d-c43f-47b5-9c8f-33356ef2ac9a",
+		"name": "KOPNUS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10793305"
+	},
+	"item": [
+		{
+			"name": "REGISTER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"PT Maju Jaya\",\r\n  \"email\": \"hrd@majujaya.com\",\r\n  \"password\": \"password\",\r\n  \"role\": \"employer\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{port}}/api/register",
+					"host": [
+						"{{url}}{{port}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"hrd@majujaya.com\",\r\n  \"password\": \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{port}}/api/login",
+					"host": [
+						"{{url}}{{port}}"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Draf Job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|e1az3DQVW3upwoIubW7o2oNFiqLemgLFVBudy6c6520273da",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Fullstack Developer\",\r\n  \"description\": \"Butuh Laravel + Vue.js\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{port}}/api/jobs",
+					"host": [
+						"{{url}}{{port}}"
+					],
+					"path": [
+						"api",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish Job (employer)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|e1az3DQVW3upwoIubW7o2oNFiqLemgLFVBudy6c6520273da",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{port}}/api/jobs/1/publish",
+					"host": [
+						"{{url}}{{port}}"
+					],
+					"path": [
+						"api",
+						"jobs",
+						"1",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lihat Job Milik Employer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|e1az3DQVW3upwoIubW7o2oNFiqLemgLFVBudy6c6520273da",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{port}}/api/jobs/my",
+					"host": [
+						"{{url}}{{port}}"
+					],
+					"path": [
+						"api",
+						"jobs",
+						"my"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lihat Semua Job Published (freelancer/public)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{port}}/api/jobs",
+					"host": [
+						"{{url}}{{port}}"
+					],
+					"path": [
+						"api",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Freelancer Apply Job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|e1az3DQVW3upwoIubW7o2oNFiqLemgLFVBudy6c6520273da",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cv_file",
+							"type": "file",
+							"src": "/D:/DOKUMEN ALI/CV/pdf 1/CV-ALI-2025.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}{{port}}/api/jobs/1/apply",
+					"host": [
+						"{{url}}{{port}}"
+					],
+					"path": [
+						"api",
+						"jobs",
+						"1",
+						"apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View cv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}{{port}}/storage/cv/2qO57uLvimzYt9mMWrJGWdOqpJFCYvJ76jjhjwAh.pdf",
+					"host": [
+						"{{url}}{{port}}"
+					],
+					"path": [
+						"storage",
+						"cv",
+						"2qO57uLvimzYt9mMWrJGWdOqpJFCYvJ76jjhjwAh.pdf"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": ":8000",
+			"type": "string"
+		}
+	]
+}
